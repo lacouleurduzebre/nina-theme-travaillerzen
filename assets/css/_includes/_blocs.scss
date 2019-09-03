@@ -1,3 +1,27 @@
+//Grid
+.blocGrille > div > div, .blocCategorie-page, .blocRubrique-page, .blocTypeCategorie-page{
+  margin-bottom: 2rem;
+  border-radius: 3rem;
+  overflow: hidden;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+//Formulaire
+.blocFormulaire{
+  label{
+    font-size: 2rem;
+  }
+  [type=text], textarea, select{
+    box-shadow: none;
+    width: 100%;
+    margin-bottom: 4rem;
+    height: 4.5rem;
+  }
+  [type=text], select{
+    height: 4.5rem;
+  }
+}
+
 //Réseaux sociaux
 .blocReseauxSociaux{
   a{

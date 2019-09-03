@@ -1,0 +1,157 @@
+body.accueil{
+  main{
+    padding-top: 6.5rem;
+    > div[class^=bloc]:not(.blocGroupeBlocs):not(.blocImage):not(.services-titre){
+      margin-bottom: 6.5rem;
+    }
+  }
+}
+
+//Titres
+body.accueil main .blocTitre{
+  @include centre;
+  font-weight: $weight-bold;
+  margin-bottom: 3rem;
+}
+
+//Titre principal
+body.accueil main > .blocTitre:first-of-type{
+  margin-bottom: 8rem;
+  h2{
+    font-size: 5rem;
+    text-align: center;
+  }
+}
+
+//Édito
+.edito{
+  @include centre;
+  text-align: center;
+  svg{
+    color: $second-color;
+    font-size: 5rem;
+  }
+  > div > div{
+    border-right: 1px solid #3D3D3D;
+    padding-right: 2rem;
+    border-radius: 0;
+    box-shadow: none;
+    &:nth-of-type(3n){
+      border-right: none;
+    }
+    p:last-of-type{
+      margin-bottom: 0;
+    }
+  }
+}
+
+//Services
+.services{
+  @include centre;
+  > div > div{
+    text-align: center;
+    background-color: $main-color;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-right: 2rem;
+    height: 25rem;
+    > *{
+      width: calc(50% - 2rem);
+    }
+  }
+  .blocGrille-case-image{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 2rem;
+    img{
+      width: 100%;
+      .objectfit &{
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  h3{
+    margin-bottom: 2rem;
+  }
+  .bouton{
+    width: 16rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+//Actualités
+.actus{
+  background-color: $third-color;
+  padding: 5rem 2rem 4rem;
+  .blocGrille, .blocBouton{
+    @include centre;
+    text-align: center;
+  }
+}
+
+.actus .blocGrille{
+  margin-bottom: 5rem;
+  > div > div{
+    background-color: $white;
+    padding-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    .blocGrille-case-texte, h3{
+      padding: 0 2rem;
+    }
+  }
+  .blocGrille-case-image{
+    margin-bottom: 3rem;
+  }
+  .bouton{
+    background-color: $main-color;
+    font-size: 2.5rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    padding: 1rem 0;
+    &:hover{
+      background-color: $second-color;
+    }
+  }
+}
+
+//Carte
+body.accueil main .blocImage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 60rem;
+  overflow: hidden;
+  margin-bottom: 0;
+  img{
+    width: 100%;
+    .objectfit &{
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+//Formulaire
+.reservation{
+  background-color: $main-color;
+  padding: 8.5rem 2rem 7rem;
+  .blocFormulaire{
+    max-width: 47rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  form > div{
+    text-align: left;
+  }
+}

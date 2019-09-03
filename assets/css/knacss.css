@@ -1698,7 +1698,7 @@ fieldset {
   }
   .grid.has-gutter-xl > * + *,
 .grid--reverse.has-gutter-xl > * + * {
-    margin-left: calc(4rem - 0.01px);
+    margin-left: calc(2rem - 0.01px);
   }
 }
 @media (min-width: 576px) {
@@ -1724,13 +1724,13 @@ fieldset {
     margin-left: 1rem;
   }
   [class*=grid-2].has-gutter-xl {
-    margin-right: -2rem;
-    margin-left: -2rem;
+    margin-right: -1rem;
+    margin-left: -1rem;
   }
   [class*=grid-2].has-gutter-xl > * {
-    width: calc(100% / 2 - 4rem - 0.01px);
-    margin-right: 2rem;
-    margin-left: 2rem;
+    width: calc(100% / 2 - 2rem - 0.01px);
+    margin-right: 1rem;
+    margin-left: 1rem;
   }
 
   [class*=grid-3] > * {
@@ -1755,13 +1755,13 @@ fieldset {
     margin-left: 1rem;
   }
   [class*=grid-3].has-gutter-xl {
-    margin-right: -2rem;
-    margin-left: -2rem;
+    margin-right: -1rem;
+    margin-left: -1rem;
   }
   [class*=grid-3].has-gutter-xl > * {
-    width: calc(100% / 3 - 4rem - 0.01px);
-    margin-right: 2rem;
-    margin-left: 2rem;
+    width: calc(100% / 3 - 2rem - 0.01px);
+    margin-right: 1rem;
+    margin-left: 1rem;
   }
 
   [class*=grid-4] > * {
@@ -1786,13 +1786,13 @@ fieldset {
     margin-left: 1rem;
   }
   [class*=grid-4].has-gutter-xl {
-    margin-right: -2rem;
-    margin-left: -2rem;
+    margin-right: -1rem;
+    margin-left: -1rem;
   }
   [class*=grid-4].has-gutter-xl > * {
-    width: calc(100% / 4 - 4rem - 0.01px);
-    margin-right: 2rem;
-    margin-left: 2rem;
+    width: calc(100% / 4 - 2rem - 0.01px);
+    margin-right: 1rem;
+    margin-left: 1rem;
   }
 
   [class*=grid-5] > * {
@@ -1817,13 +1817,13 @@ fieldset {
     margin-left: 1rem;
   }
   [class*=grid-5].has-gutter-xl {
-    margin-right: -2rem;
-    margin-left: -2rem;
+    margin-right: -1rem;
+    margin-left: -1rem;
   }
   [class*=grid-5].has-gutter-xl > * {
-    width: calc(100% / 5 - 4rem - 0.01px);
-    margin-right: 2rem;
-    margin-left: 2rem;
+    width: calc(100% / 5 - 2rem - 0.01px);
+    margin-right: 1rem;
+    margin-left: 1rem;
   }
 
   [class*=grid-6] > * {
@@ -1848,13 +1848,13 @@ fieldset {
     margin-left: 1rem;
   }
   [class*=grid-6].has-gutter-xl {
-    margin-right: -2rem;
-    margin-left: -2rem;
+    margin-right: -1rem;
+    margin-left: -1rem;
   }
   [class*=grid-6].has-gutter-xl > * {
-    width: calc(100% / 6 - 4rem - 0.01px);
-    margin-right: 2rem;
-    margin-left: 2rem;
+    width: calc(100% / 6 - 2rem - 0.01px);
+    margin-right: 1rem;
+    margin-left: 1rem;
   }
 
   [class*=grid-7] > * {
@@ -1879,13 +1879,13 @@ fieldset {
     margin-left: 1rem;
   }
   [class*=grid-7].has-gutter-xl {
-    margin-right: -2rem;
-    margin-left: -2rem;
+    margin-right: -1rem;
+    margin-left: -1rem;
   }
   [class*=grid-7].has-gutter-xl > * {
-    width: calc(100% / 7 - 4rem - 0.01px);
-    margin-right: 2rem;
-    margin-left: 2rem;
+    width: calc(100% / 7 - 2rem - 0.01px);
+    margin-right: 1rem;
+    margin-left: 1rem;
   }
 
   [class*=grid-8] > * {
@@ -1910,13 +1910,13 @@ fieldset {
     margin-left: 1rem;
   }
   [class*=grid-8].has-gutter-xl {
-    margin-right: -2rem;
-    margin-left: -2rem;
+    margin-right: -1rem;
+    margin-left: -1rem;
   }
   [class*=grid-8].has-gutter-xl > * {
-    width: calc(100% / 8 - 4rem - 0.01px);
-    margin-right: 2rem;
-    margin-left: 2rem;
+    width: calc(100% / 8 - 2rem - 0.01px);
+    margin-right: 1rem;
+    margin-left: 1rem;
   }
 
   [class*=grid-9] > * {
@@ -1941,13 +1941,13 @@ fieldset {
     margin-left: 1rem;
   }
   [class*=grid-9].has-gutter-xl {
-    margin-right: -2rem;
-    margin-left: -2rem;
+    margin-right: -1rem;
+    margin-left: -1rem;
   }
   [class*=grid-9].has-gutter-xl > * {
-    width: calc(100% / 9 - 4rem - 0.01px);
-    margin-right: 2rem;
-    margin-left: 2rem;
+    width: calc(100% / 9 - 2rem - 0.01px);
+    margin-right: 1rem;
+    margin-left: 1rem;
   }
 
   [class*=grid-10] > * {
@@ -1972,13 +1972,13 @@ fieldset {
     margin-left: 1rem;
   }
   [class*=grid-10].has-gutter-xl {
-    margin-right: -2rem;
-    margin-left: -2rem;
+    margin-right: -1rem;
+    margin-left: -1rem;
   }
   [class*=grid-10].has-gutter-xl > * {
-    width: calc(100% / 10 - 4rem - 0.01px);
-    margin-right: 2rem;
-    margin-left: 2rem;
+    width: calc(100% / 10 - 2rem - 0.01px);
+    margin-right: 1rem;
+    margin-left: 1rem;
   }
 
   [class*=grid-11] > * {
@@ -2003,13 +2003,13 @@ fieldset {
     margin-left: 1rem;
   }
   [class*=grid-11].has-gutter-xl {
-    margin-right: -2rem;
-    margin-left: -2rem;
+    margin-right: -1rem;
+    margin-left: -1rem;
   }
   [class*=grid-11].has-gutter-xl > * {
-    width: calc(100% / 11 - 4rem - 0.01px);
-    margin-right: 2rem;
-    margin-left: 2rem;
+    width: calc(100% / 11 - 2rem - 0.01px);
+    margin-right: 1rem;
+    margin-left: 1rem;
   }
 
   [class*=grid-12] > * {
@@ -2034,13 +2034,13 @@ fieldset {
     margin-left: 1rem;
   }
   [class*=grid-12].has-gutter-xl {
-    margin-right: -2rem;
-    margin-left: -2rem;
+    margin-right: -1rem;
+    margin-left: -1rem;
   }
   [class*=grid-12].has-gutter-xl > * {
-    width: calc(100% / 12 - 4rem - 0.01px);
-    margin-right: 2rem;
-    margin-left: 2rem;
+    width: calc(100% / 12 - 2rem - 0.01px);
+    margin-right: 1rem;
+    margin-left: 1rem;
   }
 }
 .push {
@@ -2078,7 +2078,7 @@ fieldset {
   }
 
   .has-gutter-xl > .full {
-    width: calc(100% / 1 - 4rem - 0.01px);
+    width: calc(100% / 1 - 2rem - 0.01px);
   }
 
   .one-half {
@@ -2095,7 +2095,7 @@ fieldset {
   }
 
   .has-gutter-xl > .one-half {
-    width: calc(100% / 2 - 4rem - 0.01px);
+    width: calc(100% / 2 - 2rem - 0.01px);
   }
 
   .one-third {
@@ -2112,7 +2112,7 @@ fieldset {
   }
 
   .has-gutter-xl > .one-third {
-    width: calc(100% / 3 - 4rem - 0.01px);
+    width: calc(100% / 3 - 2rem - 0.01px);
   }
 
   .one-quarter {
@@ -2129,7 +2129,7 @@ fieldset {
   }
 
   .has-gutter-xl > .one-quarter {
-    width: calc(100% / 4 - 4rem - 0.01px);
+    width: calc(100% / 4 - 2rem - 0.01px);
   }
 
   .one-fifth {
@@ -2146,7 +2146,7 @@ fieldset {
   }
 
   .has-gutter-xl > .one-fifth {
-    width: calc(100% / 5 - 4rem - 0.01px);
+    width: calc(100% / 5 - 2rem - 0.01px);
   }
 
   .one-sixth {
@@ -2163,7 +2163,7 @@ fieldset {
   }
 
   .has-gutter-xl > .one-sixth {
-    width: calc(100% / 6 - 4rem - 0.01px);
+    width: calc(100% / 6 - 2rem - 0.01px);
   }
 
   .two-thirds {
@@ -2180,7 +2180,7 @@ fieldset {
   }
 
   .has-gutter-xl > .two-thirds {
-    width: calc(100% / 3 * 2 - 4rem - 0.01px);
+    width: calc(100% / 3 * 2 - 2rem - 0.01px);
   }
 
   .three-quarters {
@@ -2197,7 +2197,7 @@ fieldset {
   }
 
   .has-gutter-xl > .three-quarters {
-    width: calc(100% / 4 * 3 - 4rem - 0.01px);
+    width: calc(100% / 4 * 3 - 2rem - 0.01px);
   }
 
   .five-sixths {
@@ -2214,7 +2214,7 @@ fieldset {
   }
 
   .has-gutter-xl > .five-sixths {
-    width: calc(100% / 6 * 5 - 4rem - 0.01px);
+    width: calc(100% / 6 * 5 - 2rem - 0.01px);
   }
 }
 /* Responsive Small Breakpoint */
@@ -2229,7 +2229,7 @@ fieldset {
     width: calc(100% / 1 - 2rem - 0.01px);
   }
   [class*=-small-1].has-gutter-xl > * {
-    width: calc(100% / 1 - 4rem - 0.01px);
+    width: calc(100% / 1 - 2rem - 0.01px);
   }
 
   [class*=-small-2] > * {
@@ -2242,7 +2242,7 @@ fieldset {
     width: calc(100% / 2 - 2rem - 0.01px);
   }
   [class*=-small-2].has-gutter-xl > * {
-    width: calc(100% / 2 - 4rem - 0.01px);
+    width: calc(100% / 2 - 2rem - 0.01px);
   }
 
   [class*=-small-3] > * {
@@ -2255,7 +2255,7 @@ fieldset {
     width: calc(100% / 3 - 2rem - 0.01px);
   }
   [class*=-small-3].has-gutter-xl > * {
-    width: calc(100% / 3 - 4rem - 0.01px);
+    width: calc(100% / 3 - 2rem - 0.01px);
   }
 
   [class*=-small-4] > * {
@@ -2268,7 +2268,7 @@ fieldset {
     width: calc(100% / 4 - 2rem - 0.01px);
   }
   [class*=-small-4].has-gutter-xl > * {
-    width: calc(100% / 4 - 4rem - 0.01px);
+    width: calc(100% / 4 - 2rem - 0.01px);
   }
 }
 /* ----------------------------- */
@@ -2409,6 +2409,8 @@ textarea {
   margin: 0;
   transition: 0.25s;
   transition-property: box-shadow, background-color, color, border;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
 }
 
@@ -2702,6 +2704,8 @@ button:focus {
 .switch,
 .checkbox,
 .radio {
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   vertical-align: text-bottom;
   outline: 0;
@@ -3062,8 +3066,8 @@ button:focus {
   display: inline-block;
   background-color: #3D3D3D;
   color: #fff;
-  border-radius: 5px;
-  padding: 1rem 1.5rem;
+  border-radius: 3rem;
+  padding: 2rem 3.5rem;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   text-decoration: none;
   transition: background-color 0.3s;
@@ -3294,10 +3298,195 @@ body.notFull .cookies {
   margin-top: 0.3rem;
 }
 
+.blocGrille > div > div, .blocCategorie-page, .blocRubrique-page, .blocTypeCategorie-page {
+  margin-bottom: 2rem;
+  border-radius: 3rem;
+  overflow: hidden;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.blocFormulaire label {
+  font-size: 2rem;
+}
+.blocFormulaire [type=text], .blocFormulaire textarea, .blocFormulaire select {
+  box-shadow: none;
+  width: 100%;
+  margin-bottom: 4rem;
+  height: 4.5rem;
+}
+.blocFormulaire [type=text], .blocFormulaire select {
+  height: 4.5rem;
+}
+
 .blocReseauxSociaux a {
   display: inline-block;
   margin-right: 1.5rem;
   font-size: 3rem;
+}
+
+body.accueil main {
+  padding-top: 6.5rem;
+}
+body.accueil main > div[class^=bloc]:not(.blocGroupeBlocs):not(.blocImage):not(.services-titre) {
+  margin-bottom: 6.5rem;
+}
+
+body.accueil main .blocTitre {
+  max-width: 830px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+body.accueil main > .blocTitre:first-of-type {
+  margin-bottom: 8rem;
+}
+body.accueil main > .blocTitre:first-of-type h2 {
+  font-size: 5rem;
+  text-align: center;
+}
+
+.edito {
+  max-width: 830px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  text-align: center;
+}
+.edito svg {
+  color: #FF8A00;
+  font-size: 5rem;
+}
+.edito > div > div {
+  border-right: 1px solid #3D3D3D;
+  padding-right: 2rem;
+  border-radius: 0;
+  box-shadow: none;
+}
+.edito > div > div:nth-of-type(3n) {
+  border-right: none;
+}
+.edito > div > div p:last-of-type {
+  margin-bottom: 0;
+}
+
+.services {
+  max-width: 830px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.services > div > div {
+  text-align: center;
+  background-color: #7BCDF1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-right: 2rem;
+  height: 25rem;
+}
+.services > div > div > * {
+  width: calc(50% - 2rem);
+}
+.services .blocGrille-case-image {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 2rem;
+}
+.services .blocGrille-case-image img {
+  width: 100%;
+}
+.objectfit .services .blocGrille-case-image img {
+  height: 100%;
+  object-fit: cover;
+}
+.services h3 {
+  margin-bottom: 2rem;
+}
+.services .bouton {
+  width: 16rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.actus {
+  background-color: #FFD19C;
+  padding: 5rem 2rem 4rem;
+}
+.actus .blocGrille, .actus .blocBouton {
+  max-width: 830px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  text-align: center;
+}
+
+.actus .blocGrille {
+  margin-bottom: 5rem;
+}
+.actus .blocGrille > div > div {
+  background-color: #fff;
+  padding-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.actus .blocGrille > div > div .blocGrille-case-texte, .actus .blocGrille > div > div h3 {
+  padding: 0 2rem;
+}
+.actus .blocGrille .blocGrille-case-image {
+  margin-bottom: 3rem;
+}
+.actus .blocGrille .bouton {
+  background-color: #7BCDF1;
+  font-size: 2.5rem;
+  width: 4.5rem;
+  height: 4.5rem;
+  padding: 1rem 0;
+}
+.actus .blocGrille .bouton:hover {
+  background-color: #FF8A00;
+}
+
+body.accueil main .blocImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 60rem;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+body.accueil main .blocImage img {
+  width: 100%;
+}
+.objectfit body.accueil main .blocImage img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.reservation {
+  background-color: #7BCDF1;
+  padding: 8.5rem 2rem 7rem;
+}
+.reservation .blocFormulaire {
+  max-width: 47rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.reservation form > div {
+  text-align: left;
 }
 
 /*# sourceMappingURL=knacss.css.map */

@@ -17,7 +17,7 @@ $extra-large: 1200px !default;
 $cols: 12 !default;
 
 // gutter values for grid layouts. Unit can be: %, px, em, rem
-$grid-gutters: ( '': 1rem, '-l': 2rem, '-xl': 4rem );
+$grid-gutters: ( '': 1rem, '-l': 2rem, '-xl': 2rem );
 // IEfixing, see
 // https://github.com/alsacreations/KNACSS/issues/133;
 $iefix: 0.01px;

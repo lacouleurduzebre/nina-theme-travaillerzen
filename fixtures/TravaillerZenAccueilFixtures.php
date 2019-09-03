@@ -10,10 +10,13 @@ namespace Theme\travaillerzen\fixtures;
 
 
 use App\Entity\Bloc;
+use App\Entity\Categorie;
+use App\Entity\Configuration;
 use App\Entity\GroupeBlocs;
 use App\Entity\Langue;
 use App\Entity\Page;
 use App\Entity\SEO;
+use App\Entity\TypeCategorie;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 
@@ -56,278 +59,282 @@ class TravaillerZenAccueilFixtures extends Fixture
             $accueil->removeBloc($bloc);
         }
 
-        //Édito
-        $edito = new Bloc();
-        $edito->setType('Texte')
+        //Titre principal
+        $titrePrincipal = new Bloc();
+        $titrePrincipal->setType('Titre')
             ->setPage($accueil)
-            ->setClass('edito')
             ->setPosition(0)
             ->setContenu([
-                'texte' => file_get_contents(getcwd().'/themes/festival/fixtures/edito.html')
+                'texte' => 'La solution pour<br> travailler en équipe !',
+                'balise' => 'h2'
+            ]);
+        $manager->persist($titrePrincipal);
+
+        //Édito
+        $edito = new Bloc();
+        $edito->setType('Grille')
+            ->setPage($accueil)
+            ->setClass('edito')
+            ->setPosition(1)
+            ->setContenu([
+                'nbColonnes' => 3,
+                'cases' => [
+                    [
+                        'position' => 0,
+                        'texte' => '<p><i class="fas fa-map-marker-alt"></i></p><p>Trouvez le lieu qui vous convient pour travailler</p>'
+                    ],
+                    [
+                        'position' => 1,
+                        'texte' => '<p><i class="fas fa-phone"></i></p><p>Réservez votre bureau, open space ou salle de réunion</p>'
+                    ],
+                    [
+                        'position' => 2,
+                        'texte' => '<p><i class="fas fa-users"></i></p><p>Retrouvez vos collègues à votre lieu de travail</p>'
+                    ]
+                ]
             ]);
         $manager->persist($edito);
 
-        //Bouton découvrir
-        $contenuBouton = [
-            'lien' => '#',
-            'texte' => 'Découvrir',
-            'titre' => 'Découvrir'
-        ];
-
-        $bouton = new Bloc();
-        $bouton->setType('Bouton')
-            ->setPage($accueil)
-            ->setClass('decouvrir')
-            ->setPosition(1)
-            ->setContenu($contenuBouton);
-        $manager->persist($bouton);
-
-        //Tarifs
-        $groupeBlocsTarifs = new GroupeBlocs();
-        $groupeBlocsTarifs->setNom('Tarifs')
-            ->setLangue($langue)
-            ->setIdentifiant('tarifs');
-        $manager->persist($groupeBlocsTarifs);
-
-        $contenuTitreTarifs = [
-            'texte' => 'Tarifs',
-            'balise' => 'h2'
-        ];
-
-        $titreTarifs = new Bloc();
-        $titreTarifs->setType('Titre')
-            ->setGroupeBlocs($groupeBlocsTarifs)
-            ->setPosition(0)
-            ->setContenu($contenuTitreTarifs);
-        $manager->persist($titreTarifs);
-
-        $lienTarif = [
-            'lien' => '#',
-            'texte' => 'Réserver mon billet',
-            'titre' => 'Réserver mon billet'
-        ];
-
-        $contenuTarifs = [
-            'nbColonnes' => 3,
-            'cases' => [
-                [
-                    'position' => 0,
-                    'titre' => '1 jour /20€',
-                    'texte' => '(vendredi, samedi ou dimanche)',
-                    'lien' => $lienTarif
-                ],
-                [
-                    'position' => 1,
-                    'titre' => 'Samedi et Dimanche /35€',
-                    'texte' => '',
-                    'lien' => $lienTarif
-                ],
-                [
-                    'position' => 2,
-                    'titre' => 'Pass 3 jours /50€',
-                    'texte' => '(vendredi, samedi et dimanche)',
-                    'lien' => $lienTarif
-                ]
-            ]
-        ];
-
-        $tarifs = new Bloc();
-        $tarifs->setType('Grille')
-            ->setGroupeBlocs($groupeBlocsTarifs)
-            ->setPosition(1)
-            ->setContenu($contenuTarifs);
-        $manager->persist($tarifs);
-        $manager->flush();
-
-        $blocTarifs = new Bloc();
-        $blocTarifs->setType('GroupeBlocs')
+        //Titre services
+        $titreServices = new Bloc();
+        $titreServices->setType('Titre')
+            ->setClass('services-titre')
             ->setPage($accueil)
             ->setPosition(2)
             ->setContenu([
-                'groupeBlocs' => $groupeBlocsTarifs->getId()
+                'texte' => 'Vos services en ligne',
+                'balise' => 'h2'
             ]);
-        $manager->persist($blocTarifs);
+        $manager->persist($titreServices);
 
-        //Réseaux sociaux des artisans
-        $groupeBlocsArtisans = new GroupeBlocs();
-        $groupeBlocsArtisans->setNom('Artisans')
-            ->setLangue($langue)
-            ->setIdentifiant('artisans');
-        $manager->persist($groupeBlocsArtisans);
-
-        $contenuTitreArtisans = [
-            'texte' => 'Suivez les artisans sur leurs réseaux sociaux !',
-            'balise' => 'h2'
+        //Services
+        $lien = [
+            'lien' => '#',
+            'texte' => 'En savoir plus'
         ];
 
-        $titreArtisans = new Bloc();
-        $titreArtisans->setType('Titre')
-            ->setGroupeBlocs($groupeBlocsArtisans)
-            ->setPosition(0)
-            ->setContenu($contenuTitreArtisans);
-        $manager->persist($titreArtisans);
-
-        $imageArtisans = [
-            'image' => '/theme/img/artisans.jpg',
-            'description' => 'pseudo_artisan'
-        ];
-
-        $texteArtisans = "<p>pseudo_artisan</p><p>@pseudo_artisan</p>";
-
-        $contenuArtisans = [
-            'nbColonnes' => 4,
-            'cases' => [
-                [
-                    'position' => 0,
-                    'texte' => $texteArtisans,
-                    'image' => $imageArtisans
-                ],
-                [
-                    'position' => 1,
-                    'texte' => $texteArtisans,
-                    'image' => $imageArtisans
-                ],
-                [
-                    'position' => 2,
-                    'texte' => $texteArtisans,
-                    'image' => $imageArtisans
-                ],
-                [
-                    'position' => 3,
-                    'texte' => $texteArtisans,
-                    'image' => $imageArtisans
+        $services = new Bloc();
+        $services->setType('Grille')
+            ->setPage($accueil)
+            ->setClass('services')
+            ->setPosition(3)
+            ->setContenu([
+                'nbColonnes' => 2,
+                'cases' => [
+                    [
+                        'position' => 0,
+                        'image' => [
+                            'image' => '/theme/img/projet.jpg',
+                            'description' => 'Proposer un projet'
+                        ],
+                        'titre' => 'Proposer un projet',
+                        'lien' => $lien
+                    ],
+                    [
+                        'position' => 1,
+                        'image' => [
+                            'image' => '/theme/img/espace.jpg',
+                            'description' => 'Proposer un projet'
+                        ],
+                        'titre' => 'Réserver un espace de travail',
+                        'lien' => $lien
+                    ],
+                    [
+                        'position' => 2,
+                        'image' => [
+                            'image' => '/theme/img/reunion.jpg',
+                            'description' => 'Proposer un projet'
+                        ],
+                        'titre' => 'Organiser une réunion',
+                        'lien' => $lien
+                    ],
+                    [
+                        'position' => 3,
+                        'image' => [
+                            'image' => '/theme/img/localisation.jpg',
+                            'description' => 'Proposer un projet'
+                        ],
+                        'titre' => 'Nous localiser',
+                        'lien' => $lien
+                    ]
                 ]
-            ]
-        ];
+            ]);
+        $manager->persist($services);
 
-        $artisans = new Bloc();
-        $artisans->setType('Grille')
-            ->setGroupeBlocs($groupeBlocsArtisans)
-            ->setPosition(1)
-            ->setContenu($contenuArtisans);
-        $manager->persist($artisans);
+        //Actualités
+        $groupeBlocsActus = new GroupeBlocs();
+        $groupeBlocsActus->setNom('Actualités')
+            ->setLangue($langue)
+            ->setIdentifiant('actus');
+        $manager->persist($groupeBlocsActus);
         $manager->flush();
 
-        $boutonArtisans = new Bloc();
-        $boutonArtisans->setType('Bouton')
-            ->setGroupeBlocs($groupeBlocsArtisans)
+        $titreActus = new Bloc();
+        $titreActus->setType('Titre')
+            ->setGroupeBlocs($groupeBlocsActus)
+            ->setPosition(0)
+            ->setContenu([
+                'texte' => 'Nos actualités',
+                'balise' => 'h2'
+            ]);
+        $manager->persist($titreActus);
+
+        $lienActu = [
+            'texte' => '<i class="fas fa-plus"></i>',
+            'titre' => 'En savoir plus',
+            'lien' => '#'
+        ];
+
+        $actus = new Bloc();
+        $actus->setType('Grille')
+            ->setGroupeBlocs($groupeBlocsActus)
+            ->setPosition(1)
+            ->setContenu([
+                'nbColonnes' => 3,
+                'cases' => [
+                    [
+                        'position' => 0,
+                        'image' => [
+                            'image' => '/theme/img/methodes.jpg',
+                            'description' => 'Proposer un projet'
+                        ],
+                        'titre' => 'Les bonnes méthodes de travail',
+                        'lien' => $lienActu
+                    ],
+                    [
+                        'position' => 1,
+                        'image' => [
+                            'image' => '/theme/img/pause.jpg',
+                            'description' => 'Proposer un projet'
+                        ],
+                        'titre' => 'À quel moment s’accorder une pause ?',
+                        'lien' => $lienActu
+                    ],
+                    [
+                        'position' => 2,
+                        'image' => [
+                            'image' => '/theme/img/yeux.jpg',
+                            'description' => 'Proposer un projet'
+                        ],
+                        'titre' => 'Devant les écrans, protégez-vos yeux !',
+                        'lien' => $lienActu
+                    ]
+                ]
+            ]);
+        $manager->persist($actus);
+
+        $boutonActus = new Bloc();
+        $boutonActus->setType('Bouton')
+            ->setGroupeBlocs($groupeBlocsActus)
             ->setPosition(2)
             ->setContenu([
                 'lien' => '#',
-                'texte' => 'Voir + d’artisans'
+                'texte' => 'Toutes les actualités'
             ]);
-        $manager->persist($boutonArtisans);
+        $manager->persist($boutonActus);
 
-        $blocArtisans = new Bloc();
-        $blocArtisans->setType('GroupeBlocs')
-            ->setPage($accueil)
-            ->setPosition(3)
-            ->setContenu([
-                'groupeBlocs' => $groupeBlocsArtisans->getId()
-            ]);
-        $manager->persist($blocArtisans);
-
-        //Galerie
-        $groupeBlocsGalerie = new GroupeBlocs();
-        $groupeBlocsGalerie->setNom('Galerie 2018')
-            ->setLangue($langue)
-            ->setIdentifiant('galerie-2018');
-        $manager->persist($groupeBlocsGalerie);
-
-        $contenuTitreGalerie = [
-            'texte' => 'Les ateliers du festival des artisans 2018',
-            'balise' => 'h2'
-        ];
-
-        $titreGalerie = new Bloc();
-        $titreGalerie->setType('Titre')
-            ->setGroupeBlocs($groupeBlocsGalerie)
-            ->setPosition(0)
-            ->setContenu($contenuTitreGalerie);
-        $manager->persist($titreGalerie);
-
-        $contenuGalerie = [
-            'affichage' => 'lightbox',
-            'images' => [
-                [
-                    'image' => [
-                        'image' => 'theme/img/galerie1.jpg',
-                    ],
-                    'position' => 0,
-                ],
-                [
-                    'image' => [
-                        'image' => 'theme/img/galerie2.jpg',
-                    ],
-                    'position' => 1,
-                ],
-                [
-                    'image' => [
-                        'image' => 'theme/img/galerie3.jpg',
-                    ],
-                    'position' => 2,
-                ],
-                [
-                    'image' => [
-                        'image' => 'theme/img/galerie4.jpg',
-                    ],
-                    'position' => 3,
-                ]
-            ]
-        ];
-
-        $galerie = new Bloc();
-        $galerie->setType('Galerie')
-            ->setGroupeBlocs($groupeBlocsGalerie)
-            ->setPosition(1)
-            ->setContenu($contenuGalerie);
-        $manager->persist($galerie);
-        $manager->flush();
-
-        $blocGalerie = new Bloc();
-        $blocGalerie->setType('GroupeBlocs')
+        $blocActus = new Bloc();
+        $blocActus->setType('GroupeBlocs')
             ->setPage($accueil)
             ->setPosition(4)
             ->setContenu([
-                'groupeBlocs' => $groupeBlocsGalerie->getId()
+                'groupeBlocs' => $groupeBlocsActus->getId()
             ]);
-        $manager->persist($blocGalerie);
+        $manager->persist($blocActus);
 
-        //Prévente
-        $groupeBlocsPrevente = new GroupeBlocs();
-        $groupeBlocsPrevente->setNom('Prévente en ligne')
-            ->setLangue($langue)
-            ->setIdentifiant('prevente');
-        $manager->persist($groupeBlocsPrevente);
-
-        $textePrevente = new Bloc();
-        $textePrevente->setType('Texte')
-            ->setGroupeBlocs($groupeBlocsPrevente)
-            ->setPosition(0)
-            ->setContenu([
-                'texte' => '<h2>Prévente en ligne</h2><p>Tarif 1, 2 ou 3 jours</p>'
-            ]);
-        $manager->persist($textePrevente);
-
-        $boutonPrevente = new Bloc();
-        $boutonPrevente->setType('Bouton')
-            ->setGroupeBlocs($groupeBlocsPrevente)
-            ->setPosition(1)
-            ->setContenu([
-                'lien' => '#',
-                'texte' => 'Acheter mon billet'
-            ]);
-        $manager->persist($boutonPrevente);
-        $manager->flush();
-
-        $blocPrevente = new Bloc();
-        $blocPrevente->setType('GroupeBlocs')
+        //Carte
+        $carte = new Bloc();
+        $carte->setType('Image')
             ->setPage($accueil)
             ->setPosition(5)
             ->setContenu([
-                'groupeBlocs' => $groupeBlocsPrevente->getId()
+                'image' => '/theme/img/carte.jpg',
+                'description' => 'Nous localiser'
             ]);
-        $manager->persist($blocPrevente);
+        $manager->persist($carte);
+
+        //Formulaire de réservation
+        $groupeBlocsFormulaire = new GroupeBlocs();
+        $groupeBlocsFormulaire->setNom('Réservation')
+            ->setLangue($langue)
+            ->setIdentifiant('reservation');
+        $manager->persist($groupeBlocsFormulaire);
+        $manager->flush();
+
+        $titreFormulaire = new Bloc();
+        $titreFormulaire->setType('Titre')
+            ->setGroupeBlocs($groupeBlocsFormulaire)
+            ->setPosition(0)
+            ->setContenu([
+                'texte' => "Réservation d'un espace de travail",
+                'balise' => 'h2'
+            ]);
+        $manager->persist($titreFormulaire);
+
+        $repoConfig = $manager->getRepository(Configuration::class);
+        $mailContact = $repoConfig->find(1)->getEmailContact();
+
+        $formulaire = new Bloc();
+        $formulaire->setType('Formulaire')
+            ->setGroupeBlocs($groupeBlocsFormulaire)
+            ->setPosition(1)
+            ->setContenu([
+                'destinataires' => [
+                    $mailContact
+                ],
+                'objet' => "Réservation d'un espace de travail",
+                'messageConfirmation' => "Merci pour votre message, nous vous recontacterons dans les meilleurs délais.",
+                'submit' => "Envoyer",
+                'champs' => [
+                    [
+                        'type' => 'text',
+                        'position' => 0,
+                        'label' => 'Votre nom'
+                    ],
+                    [
+                        'type' => 'text',
+                        'position' => 1,
+                        'label' => 'Votre prénom'
+                    ],
+                    [
+                        'type' => 'text',
+                        'position' => 2,
+                        'label' => 'Votre mail'
+                    ],
+                    [
+                        'type' => 'select',
+                        'position' => 3,
+                        'label' => 'Nombre de personnes',
+                        'choix' => [
+                            '1', '2', '3', '5', '10', '+ de 15'
+                        ]
+                    ],
+                    [
+                        'type' => 'select',
+                        'position' => 4,
+                        'label' => 'Un espace préféré',
+                        'choix' => [
+                            'Salle de réunion 1 rue du chemin de fer',
+                            'Salle de réunion 2 rue du chemin de fer'
+                        ]
+                    ],
+                    [
+                        'type' => 'textarea',
+                        'position' => 4,
+                        'label' => 'Un message particulier ?',
+                    ]
+                ]
+            ]);
+        $manager->persist($formulaire);
+
+        $blocFormulaire = new Bloc();
+        $blocFormulaire->setType('GroupeBlocs')
+            ->setPage($accueil)
+            ->setPosition(6)
+            ->setContenu([
+                'groupeBlocs' => $groupeBlocsFormulaire->getId()
+            ]);
+        $manager->persist($blocFormulaire);
 
         $manager->flush();
     }
