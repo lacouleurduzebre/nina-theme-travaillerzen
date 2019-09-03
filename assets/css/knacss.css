@@ -3058,27 +3058,6 @@ button:focus {
   display: none;
 }
 
-.scrollTop {
-  display: none;
-  cursor: pointer;
-  position: fixed;
-  right: 1rem;
-  bottom: 1rem;
-  border-radius: 50%;
-  background-color: #FF8A00;
-  width: 5rem;
-  text-align: center;
-  height: 5rem;
-  color: #FFF;
-  font-size: 4rem;
-  border: 1px solid;
-}
-.scrollTop svg {
-  display: block;
-  margin-left: 1.2rem;
-  margin-top: 0.3rem;
-}
-
 .bouton, input[type=submit] {
   display: inline-block;
   background-color: #3D3D3D;
@@ -3095,15 +3074,175 @@ button:focus {
   color: #fff;
 }
 
+.groupeBlocs.header {
+  padding-top: 1.5rem;
+  position: relative;
+}
+
+.groupeBlocs.header .blocLogoSite {
+  position: absolute;
+  top: 2.5rem;
+  left: 4.5rem;
+}
+.groupeBlocs.header .blocLogoSite img {
+  max-width: 10rem;
+}
+
+.groupeBlocs.header .blocRecherche {
+  max-width: 830px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.groupeBlocs.header .blocRecherche input, .groupeBlocs.header .blocRecherche button {
+  height: 6rem;
+  box-shadow: none;
+}
+.groupeBlocs.header .blocRecherche input {
+  background-color: #EEEEEE;
+  width: 80%;
+  border-top-left-radius: 3rem;
+  border-bottom-left-radius: 3rem;
+}
+.groupeBlocs.header .blocRecherche input::placeholder {
+  color: #EEEEEE;
+}
+.groupeBlocs.header .blocRecherche button {
+  border-top-right-radius: 3rem;
+  border-bottom-right-radius: 3rem;
+  width: 6rem;
+  font-size: 3rem;
+}
+
 .groupeBlocs.header .blocMenu {
   background-color: #7BCDF1;
+}
+.groupeBlocs.header .blocMenu > div {
+  max-width: 830px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.groupeBlocs.header .blocMenu ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.groupeBlocs.header .blocMenu ul ul {
+  display: none;
+  position: absolute;
+  z-index: 100;
+}
+.groupeBlocs.header .blocMenu li.parent {
+  position: relative;
+}
+.groupeBlocs.header .blocMenu li.parent:hover > a {
+  background-color: #EEEEEE;
+}
+.groupeBlocs.header .blocMenu li.parent:hover > ul {
+  display: block;
+  width: 100%;
+}
+.groupeBlocs.header .blocMenu a {
+  display: inline-block;
+}
+.groupeBlocs.header .blocMenu a:hover {
+  color: #3D3D3D;
+}
+
+.groupeBlocs.header .blocMenu > div > ul {
+  display: flex;
+  justify-content: center;
+}
+.groupeBlocs.header .blocMenu > div > ul > li > a {
+  padding: 1.5rem 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.groupeBlocs.header .blocMenu > div > ul > li > a:hover {
+  background-color: #EEEEEE;
+}
+
+.groupeBlocs.header .blocMenu > div > ul > li > ul a {
+  background-color: #EEEEEE;
+  padding: 1rem 2rem;
+  width: 100%;
+  font-size: 1.8rem;
+}
+.groupeBlocs.header .blocMenu > div > ul > li > ul a:hover {
+  color: #7BCDF1;
+}
+
+.groupeBlocs.header .blocMenu > div > ul > li > ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+.groupeBlocs.header .blocMenu > div > ul > li > ul > li > ul {
+  position: absolute;
+  top: 0;
+  left: 100%;
+}
+
+@media (min-width: 768px) {
+  #burger {
+    display: none;
+  }
 }
 
 footer {
   background-color: #3D3D3D;
+  padding: 3rem 0 6.5rem;
 }
 footer, footer a {
   color: #fff;
+}
+
+.groupeBlocs.footer {
+  max-width: 830px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.groupeBlocs.footer h2 {
+  font-weight: 700;
+  margin-bottom: 4rem;
+}
+.groupeBlocs.footer h3 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+.groupeBlocs.footer p {
+  font-size: 1.6rem;
+}
+
+.groupeBlocs.footer .blocTexte {
+  float: left;
+  margin-right: 18.5rem;
+  padding-bottom: 10rem;
+}
+
+.groupeBlocs.footer .blocReseauxSociaux {
+  margin-top: 3rem;
+}
+
+.groupeBlocs.footer .blocMenu {
+  margin-top: 5.5rem;
+}
+.groupeBlocs.footer .blocMenu ul {
+  display: flex;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.groupeBlocs.footer .blocMenu li {
+  margin-right: 2rem;
 }
 
 .cookies {
@@ -3132,6 +3271,33 @@ footer, footer a {
 }
 body.notFull .cookies {
   left: 30rem;
+}
+
+.scrollTop {
+  display: none;
+  cursor: pointer;
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  border-radius: 50%;
+  background-color: #FF8A00;
+  width: 5rem;
+  text-align: center;
+  height: 5rem;
+  color: #FFF;
+  font-size: 4rem;
+  border: 1px solid;
+}
+.scrollTop svg {
+  display: block;
+  margin-left: 1.2rem;
+  margin-top: 0.3rem;
+}
+
+.blocReseauxSociaux a {
+  display: inline-block;
+  margin-right: 1.5rem;
+  font-size: 3rem;
 }
 
 /*# sourceMappingURL=knacss.css.map */

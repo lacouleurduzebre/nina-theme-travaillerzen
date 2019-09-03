@@ -72,3 +72,11 @@ $bp-aliases: (
     color: $white;
   }
 }
+
+@mixin centre{
+  max-width: $large;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}

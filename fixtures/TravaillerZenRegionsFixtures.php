@@ -124,17 +124,18 @@ class TravaillerZenRegionsFixtures extends Fixture
             ->setGroupeBlocs($groupeBlocFooter)
             ->setPosition(1)
             ->setContenu([
-                'texte' => '<p><strong>Coordonnées</strong></p><p>7 rue du chemin de Fer<br>67 000 STRASBOURG</p><p>tel. : 03 88 76 78 65<br>mail@mail.fr</p>'
+                'texte' => '<h3><strong>Coordonnées</strong></h3><p>7 rue du chemin de Fer<br>67 000 STRASBOURG</p><p>tel. : 03 88 76 78 65<br>mail@mail.fr</p>'
             ]);
         $manager->persist($coordonnees);
 
             //Texte
         $concept = new Bloc();
-        $concept->setType('Texte')
+        $concept->setType('Titre')
             ->setGroupeBlocs($groupeBlocFooter)
             ->setPosition(2)
             ->setContenu([
-                'texte' => '<p>Notre concept vous plait ?<br> Partagez-le avec vos réseaux !</p>'
+                'texte' => 'Notre concept vous plait ?<br> Partagez-le avec vos réseaux !',
+                'balise' => 'h3'
             ]);
         $manager->persist($concept);
 
