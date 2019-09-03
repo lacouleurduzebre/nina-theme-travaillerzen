@@ -1,0 +1,22 @@
+infos:
+    nom: Travailler zen
+    auteur: la couleur du Zèbre
+    site: https://www.lacouleurduzebre.com
+    description: "Ce thème est un exemple de proposition de services par une entreprise. Organisez les services que vous proposez et exposez-les sur cette interface épurée, aux couleurs stimulantes."
+champs:
+    main-color:
+        label: "Couleur principale"
+        type: color
+        defaut: "#7BCDF1"
+    second-color:
+        label: "Deuxième couleur"
+        type: color
+        defaut: "#FF8A00"
+    third-color:
+        label: "Troisième couleur"
+        type: color
+        defaut: "#FFD19C"
+    fourth-color:
+        label: "Quatrième couleur"
+        type: color
+        defaut: "#3D3D3D"

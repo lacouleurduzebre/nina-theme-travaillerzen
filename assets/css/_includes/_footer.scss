@@ -1,0 +1,35 @@
+footer{
+  background-color: $fourth-color;
+  &, a{
+    color: $white;
+  }
+}
+
+//Bandeau cookies
+.cookies{
+  position: fixed;
+  bottom: 0;
+  max-width: $large;
+  margin: auto;
+  left: 0;
+  right: 0;
+  background: $fourth-color;
+  box-shadow: 4px -4px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  padding: 1.5rem 2rem 1.5rem;
+  font-size: 1.3rem;
+  p{
+    margin-bottom: 0;
+  }
+  &, a{
+    color: $white;
+  }
+  a{
+    text-decoration: underline;
+  }
+  body.notFull &{
+    left: 30rem;
+  }
+}
