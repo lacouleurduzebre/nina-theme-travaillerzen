@@ -1,0 +1,60 @@
+body:not(.accueil) main{
+  @include centre;
+  padding: 5rem 2rem;
+  > [data-bloc]:not(.blocTitre){
+    margin-bottom: 3rem;
+  }
+  > [data-bloc].blocSlider{
+    margin-bottom: 5rem;
+  }
+  a:hover{
+    text-decoration: underline;
+  }
+}
+
+//Ariane
+#ariane{
+  margin-bottom: 3rem;
+  color: $main-color;
+  font-weight: $weight-bold;
+  a, span{
+    font-weight: $weight-regular;
+    color: $fourth-color;
+  }
+  a{
+    text-decoration: underline;
+  }
+}
+
+//Commentaires
+.blocCommentaires-formulaire{
+  display: none;
+  form > div > div{
+    margin-bottom: 4rem;
+  }
+  [type=submit]{
+    @include bouton;
+  }
+}
+
+//Pagination
+.pagination{
+  font-size: 1.7rem;
+  ul{
+    justify-content: center;
+    align-items: center;
+  }
+  li{
+    margin: 0 .5rem;
+  }
+  span{
+    color: lighten($fourth-color, 40);
+  }
+  a{
+    text-decoration: none;
+  }
+}
+
+.pagination-active span{
+  color: $main-color;
+}

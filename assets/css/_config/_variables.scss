@@ -28,7 +28,7 @@ $font-size-base : 1.5rem !default;
 
 $font-sizes: (
   base: (
-    mobile  : 1.3rem,
+    mobile  : 1.4rem,
     desktop : $font-size-base
   ),
   h1: (
@@ -148,7 +148,7 @@ $color-inverse  : $gray-800 !default;
 $color-ghost    : transparent !default;
 $color-muted    : $gray-200 !default;
 
-$color-base      : $gray-900 !default;
+$color-base      : $fourth-color !default;
 $background-base : $white !default;
 
 $forms-color     : $gray-800 !default;
@@ -160,7 +160,7 @@ $forms-color     : $gray-800 !default;
 // Component: links
 $link-color            : $fourth-color !default;
 $link-color-hover      : $main-color !default;
-$link-decoration       : none !default;
+$link-decoration       : underline !default;
 $link-decoration-hover : none !default;
 
 // Global border-radius

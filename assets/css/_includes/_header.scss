@@ -1,6 +1,12 @@
 .groupeBlocs.header{
   padding-top: 1.5rem;
   position: relative;
+  @include respond-to("medium"){
+    padding-top: .5rem;
+  }
+  a{
+    text-decoration: none;
+  }
 }
 
 //Logo
@@ -8,62 +14,94 @@
   position: absolute;
   top: 2.5rem;
   left: 4.5rem;
+  @include respond-to("large"){
+    top: 1.5rem;
+  }
+  @include respond-to("medium"){
+    top: 1rem;
+    left: 5.5rem;
+  }
   img{
     max-width: 10rem;
+    @include respond-to("tiny"){
+      max-width: 8rem;
+    }
   }
 }
 
 //Recherche
 .groupeBlocs.header .blocRecherche{
-  @include centre;
+  max-width: $large;
+  margin-left: auto;
   text-align: center;
   margin-bottom: 3rem;
-  input, button{
-    height: 6rem;
-    box-shadow: none;
+  @include respond-to("extra-large-up"){
+    margin-right: auto;
+  }
+  @include respond-to("extra-large"){
+    text-align: right;
+    padding-right: 2rem;
+    max-width: $small;
+    margin-bottom: 2rem;
+  }
+  @include respond-to("medium"){
+    max-width: 18rem;
+    margin-top: 1rem;
   }
   input{
-    background-color: $fifth-color;
     width: 80%;
-    border-top-left-radius: 3rem;
-    border-bottom-left-radius: 3rem;
-    &::placeholder{
-      color: $fifth-color;
-    }
   }
   button{
-    border-top-right-radius: 3rem;
-    border-bottom-right-radius: 3rem;
     width: 6rem;
-    font-size: 3rem;
+    @include respond-to("medium"){
+      width: 3rem;
+    }
   }
 }
 
 //Menu
 .groupeBlocs.header .blocMenu{
   background-color: $main-color;
+  @include respond-to("medium"){
+    display: none;
+    position: absolute;
+    top: calc(100% + 1.5rem);
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    padding: 8rem 0 8rem;
+  }
   > div{
-    @include centre;
+    @include respond-to("medium-up"){
+      @include centre;
+    }
   }
   ul{
     list-style: none;
     padding-left: 0;
     margin-bottom: 0;
     ul{
-      display: none;
-      position: absolute;
-      z-index: 100;
+      @include respond-to("medium-up"){
+        display: none;
+        position: absolute;
+        z-index: 100;
+      }
+      @include respond-to("medium"){
+        padding-left: 2rem;
+      }
     }
   }
   li.parent{
     position: relative;
-    &:hover{
-      > a{
-        background-color: $fifth-color;
-      }
-      > ul{
-        display: block;
-        width: 100%;
+    @include respond-to("medium-up"){
+      &:hover{
+        > a{
+          background-color: $fifth-color;
+        }
+        > ul{
+          display: block;
+          width: 100%;
+        }
       }
     }
   }
@@ -79,13 +117,22 @@
 .groupeBlocs.header .blocMenu > div > ul{
   display: flex;
   justify-content: center;
+  @include respond-to("medium"){
+    flex-direction: column;
+  }
   > li{
     > a{
       padding: 1.5rem 2rem;
       font-size: 2rem;
       font-weight: $weight-bold;
-      &:hover{
-        background-color: $fifth-color;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      @include respond-to("medium-up"){
+        height: 100%;
+        &:hover, &:focus{
+          background-color: $fifth-color;
+        }
       }
     }
   }
@@ -94,33 +141,54 @@
   //Sous-niveaux
 .groupeBlocs.header .blocMenu > div > ul > li > ul{
   a{
-    background-color: $fifth-color;
     padding: 1rem 2rem;
     width: 100%;
     font-size: 1.8rem;
-    &:hover{
-      color: $main-color;
+    @include respond-to("medium-up"){
+      background-color: $fifth-color;
+      &:hover{
+        color: $main-color;
+      }
     }
   }
 }
 
   //Niveau 2
 .groupeBlocs.header .blocMenu > div > ul > li > ul{
-  position: absolute;
-  top: 100%;
-  left: 0;
+  @include respond-to("medium-up"){
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
 }
 
   //Niveau 3
 .groupeBlocs.header .blocMenu > div > ul > li > ul > li > ul{
-  position: absolute;
-  top: 0;
-  left: 100%;
+  @include respond-to("medium-up"){
+    position: absolute;
+    top: 0;
+    left: 100%;
+  }
 }
 
 //Burger
 #burger{
+  float: left;
+  margin-top: 2.5rem;
+  margin-left: 2rem;
+  font-size: 2rem;
+  cursor: pointer;
+  position: relative;
+  z-index: 100;
   @include respond-to("medium-up"){
     display: none;
+  }
+  @include respond-to("medium"){
+    &.actif + div .blocMenu{
+      display: block;
+    }
+  }
+  @include respond-to("tiny"){
+    margin-top: 1.5rem;
   }
 }

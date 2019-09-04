@@ -1,24 +1,208 @@
 //Grid
-.blocGrille > div > div, .blocCategorie-page, .blocRubrique-page, .blocTypeCategorie-page{
+.blocGrille > div > div, .blocCategorie-page, .blocRubrique-page, .blocTypeCategorie-page, .categorie-page{
   margin-bottom: 2rem;
   border-radius: 3rem;
   overflow: hidden;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  h3, p, .blocGrille-case-texte{
+    padding: 1rem 2rem;
+  }
+  .bouton{
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.blocGrille-case-image{
+  img{
+    @include cover;
+  }
+}
+
+//Accordéon
+.blocAccordeon-titre{
+  background-color: $main-color;
+  padding: 1rem 2rem;
+  margin-bottom: 2px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.8rem;
+}
+
+.blocAccordeon-texte{
+  display: none;
+  padding: 2rem;
+}
+
+//Annuaire
+.blocAnnuaire-utilisateur{
+  text-align: center;
+  word-break: break-all;
+  padding: 0 1rem;
+  svg{
+    font-size: 3rem;
+  }
+  p{
+    margin-bottom: 1rem;
+    &:first-of-type{
+      font-weight: $weight-bold;
+    }
+  }
+}
+
+.blocAnnuaire-utilisateur-image{
+  margin-bottom: 2rem;
+}
+
+//Bouton
+.blocBouton{
+  text-align: center;
 }
 
 //Formulaire
-.blocFormulaire{
+.blocFormulaire, .blocCommentaires-formulaire{
   label{
     font-size: 2rem;
   }
-  [type=text], textarea, select{
+  [type=text], [type=email], textarea, select{
     box-shadow: none;
     width: 100%;
-    margin-bottom: 4rem;
     height: 4.5rem;
+    background-color: $fifth-color;
   }
   [type=text], select{
     height: 4.5rem;
+  }
+  p{
+    margin-bottom: 1rem;
+  }
+}
+
+.blocFormulaire form > div{
+  margin-bottom: 4rem;
+}
+
+//Galerie
+.blocGalerie{
+  a{
+    display: block;
+  }
+  img{
+    @include cover;
+  }
+}
+
+//Image
+.blocImage{
+  text-align: center;
+}
+
+//LEI
+.ficheLEI{
+  margin-bottom: 2rem;
+}
+
+.ficheLEI-commune{
+  margin-bottom: .5rem;
+  color: $second-color;
+  font-weight: $weight-bold;
+}
+
+.ficheLEI-image{
+  height: 16rem;
+  img{
+    @include cover;
+  }
+}
+
+.ficheLEI-titre{
+  font-size: 1.8rem;
+  font-weight: $weight-bold;
+  margin-top: .5rem;
+}
+
+//Menu
+.blocMenu a{
+  text-decoration: none;
+}
+
+//Menu des langues
+.blocMenuLangues{
+  ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    li{
+      margin-right: 2rem;
+      &.active{
+        font-weight: bold;
+      }
+    }
+  }
+  a{
+    text-decoration: none;
+  }
+}
+
+//Partage
+.blocPartage{
+  .bouton{
+    padding: 1.5rem 2.5rem;
+  }
+}
+
+//Plan du site
+.blocPlanDuSite{
+  p{
+    font-weight: $weight-bold;
+    font-size: 1.8rem;
+  }
+  a{
+    text-decoration: none;
+  }
+}
+
+//Recherche
+.blocRecherche{
+  input, button{
+    height: 6rem;
+    box-shadow: none;
+    @include respond-to("large"){
+      height: 4rem;
+    }
+    @include respond-to("medium"){
+      height: 2.5rem;
+    }
+  }
+  input{
+    background-color: $fifth-color;
+    border-top-left-radius: 3rem;
+    border-bottom-left-radius: 3rem;
+    @include respond-to("medium-up"){
+      font-size: 2.5rem;
+    }
+    &::placeholder{
+      color: $fifth-color;
+    }
+  }
+  button{
+    border-top-right-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+    font-size: 3rem;
+    @include respond-to("large"){
+      font-size: 2.5rem;
+    }
+    @include respond-to("medium"){
+      font-size: 1.5rem;
+    }
   }
 }
 
@@ -28,5 +212,53 @@
     display: inline-block;
     margin-right: 1.5rem;
     font-size: 3rem;
+  }
+}
+
+//Slider
+.slick-prev, .slick-next{
+  font-size: 0;
+  background-color: transparent;
+  padding: 0;
+  width: 3rem;
+  height: 3rem;
+  &:before{
+    font-size: 3rem;
+  }
+}
+
+.slick-prev{
+  left: -3.5rem;
+}
+
+.slick-next{
+  right: -3.5rem;
+}
+
+.slide--texte{
+  margin-bottom: 1rem;
+}
+
+.slide--lien a{
+  @include bouton;
+  padding: 1rem 2.5rem;
+}
+
+.slick-dots li button::before{
+  font-size: 1rem;
+}
+
+.slick-slide{
+  padding: 0 1rem;
+  img{
+    @include cover;
+  }
+}
+
+//Vidéo
+.blocVideos-video{
+  margin-bottom: 4rem;
+  iframe{
+    max-height: 30rem;
   }
 }

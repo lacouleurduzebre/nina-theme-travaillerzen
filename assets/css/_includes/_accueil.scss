@@ -56,6 +56,7 @@ body.accueil main > .blocTitre:first-of-type{
     flex-wrap: wrap;
     justify-content: center;
     padding-right: 2rem;
+    padding-bottom: 0;
     height: 25rem;
     > *{
       width: calc(50% - 2rem);
@@ -122,6 +123,10 @@ body.accueil main > .blocTitre:first-of-type{
       background-color: $second-color;
     }
   }
+}
+
+.actus .blocBouton a:hover{
+  background-color: $main-color;
 }
 
 //Carte
