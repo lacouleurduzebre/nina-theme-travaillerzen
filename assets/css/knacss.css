@@ -3448,6 +3448,10 @@ body:not(.accueil) main a:hover {
   text-decoration: underline;
 }
 
+h1 {
+  margin-bottom: 2rem;
+}
+
 #ariane {
   margin-bottom: 3rem;
   color: #7BCDF1;
@@ -3490,6 +3494,11 @@ body:not(.accueil) main a:hover {
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 575px) {
+  .pagination ul {
+    flex-direction: row;
+  }
+}
 .pagination li {
   margin: 0 0.5rem;
 }
@@ -3502,6 +3511,10 @@ body:not(.accueil) main a:hover {
 
 .pagination-active span {
   color: #7BCDF1;
+}
+
+.bouton-categorie {
+  margin-right: 0.5rem;
 }
 
 .blocGrille > div > div, .blocCategorie-page, .blocRubrique-page, .blocTypeCategorie-page, .categorie-page {
@@ -3573,6 +3586,11 @@ body:not(.accueil) main a:hover {
 .blocFormulaire label, .blocCommentaires-formulaire label {
   font-size: 2rem;
 }
+@media (max-width: 575px) {
+  .blocFormulaire label, .blocCommentaires-formulaire label {
+    font-size: 1.6rem;
+  }
+}
 .blocFormulaire [type=text], .blocFormulaire [type=email], .blocFormulaire textarea, .blocFormulaire select, .blocCommentaires-formulaire [type=text], .blocCommentaires-formulaire [type=email], .blocCommentaires-formulaire textarea, .blocCommentaires-formulaire select {
   box-shadow: none;
   width: 100%;
@@ -3642,6 +3660,11 @@ body:not(.accueil) main a:hover {
   margin: 0;
   display: flex;
 }
+@media (max-width: 575px) {
+  .blocMenuLangues ul {
+    flex-direction: row;
+  }
+}
 .blocMenuLangues ul li {
   margin-right: 2rem;
 }
@@ -3654,6 +3677,7 @@ body:not(.accueil) main a:hover {
 
 .blocPartage .bouton {
   padding: 1.5rem 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .blocPlanDuSite p {
@@ -3720,6 +3744,11 @@ body:not(.accueil) main a:hover {
   width: 3rem;
   height: 3rem;
 }
+@media (max-width: 829px) {
+  .slick-prev, .slick-next {
+    top: calc(100% + 1.5rem);
+  }
+}
 .slick-prev:before, .slick-next:before {
   font-size: 3rem;
 }
@@ -3727,9 +3756,19 @@ body:not(.accueil) main a:hover {
 .slick-prev {
   left: -3.5rem;
 }
+@media (max-width: 829px) {
+  .slick-prev {
+    left: 0;
+  }
+}
 
 .slick-next {
   right: -3.5rem;
+}
+@media (max-width: 829px) {
+  .slick-next {
+    right: 0;
+  }
 }
 
 .slide--texte {

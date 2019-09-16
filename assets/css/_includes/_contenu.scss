@@ -12,6 +12,10 @@ body:not(.accueil) main{
   }
 }
 
+h1{
+  margin-bottom: 2rem;
+}
+
 //Ariane
 #ariane{
   margin-bottom: 3rem;
@@ -43,6 +47,9 @@ body:not(.accueil) main{
   ul{
     justify-content: center;
     align-items: center;
+    @include respond-to("small"){
+      flex-direction: row;
+    }
   }
   li{
     margin: 0 .5rem;
@@ -57,4 +64,9 @@ body:not(.accueil) main{
 
 .pagination-active span{
   color: $main-color;
+}
+
+//Catégories
+.bouton-categorie{
+  margin-right: .5rem;
 }
